@@ -42,9 +42,10 @@ class MeetingTimeForm(ModelForm):
     class Meta:
         model = MeetingTime
         fields = ['pid', 'time', 'day']
+        labels = {'pid': 'Meeting ID', 'time': 'Time (e.g., 9:00 - 10:00)', 'day': 'Day'}
         widgets = {
             'pid': forms.TextInput(),
-            'time': forms.Select(),
+            'time': forms.TextInput(attrs={'placeholder': 'e.g., 9:00 - 10:00'}),
             'day': forms.Select(),
         }
 
