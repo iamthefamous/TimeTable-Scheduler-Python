@@ -50,9 +50,7 @@ class Instructor(models.Model):
 
 class MeetingTime(models.Model):
     pid = models.CharField(max_length=4, primary_key=True)
-    time = models.CharField(max_length=50,
-                            choices=TIME_SLOTS,
-                            default='11:30 - 12:30')
+    time = models.CharField(max_length=50)
     day = models.CharField(max_length=15, choices=DAYS_OF_WEEK)
 
     def __str__(self):
