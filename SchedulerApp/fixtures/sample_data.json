@@ -3,23 +3,23 @@
   "model": "SchedulerApp.room",
   "pk": 1,
   "fields": {
-    "r_number": "R101",
-    "seating_capacity": 40
+    "r_number": "LH101",
+    "seating_capacity": 120
   }
 },
 {
   "model": "SchedulerApp.room",
   "pk": 2,
   "fields": {
-    "r_number": "R102",
-    "seating_capacity": 35
+    "r_number": "LH102",
+    "seating_capacity": 100
   }
 },
 {
   "model": "SchedulerApp.room",
   "pk": 3,
   "fields": {
-    "r_number": "R103",
+    "r_number": "CR201",
     "seating_capacity": 50
   }
 },
@@ -27,16 +27,56 @@
   "model": "SchedulerApp.room",
   "pk": 4,
   "fields": {
-    "r_number": "R104",
-    "seating_capacity": 30
+    "r_number": "CR202",
+    "seating_capacity": 45
   }
 },
 {
   "model": "SchedulerApp.room",
   "pk": 5,
   "fields": {
-    "r_number": "R105",
-    "seating_capacity": 45
+    "r_number": "CR203",
+    "seating_capacity": 40
+  }
+},
+{
+  "model": "SchedulerApp.room",
+  "pk": 6,
+  "fields": {
+    "r_number": "SR301",
+    "seating_capacity": 25
+  }
+},
+{
+  "model": "SchedulerApp.room",
+  "pk": 7,
+  "fields": {
+    "r_number": "SR302",
+    "seating_capacity": 25
+  }
+},
+{
+  "model": "SchedulerApp.room",
+  "pk": 8,
+  "fields": {
+    "r_number": "LAB01",
+    "seating_capacity": 35
+  }
+},
+{
+  "model": "SchedulerApp.room",
+  "pk": 9,
+  "fields": {
+    "r_number": "LAB02",
+    "seating_capacity": 30
+  }
+},
+{
+  "model": "SchedulerApp.room",
+  "pk": 10,
+  "fields": {
+    "r_number": "LAB03",
+    "seating_capacity": 25
   }
 },
 {
@@ -44,7 +84,7 @@
   "pk": 1,
   "fields": {
     "uid": "I001",
-    "name": "Dr. Smith"
+    "name": "Dr. Emily Chen"
   }
 },
 {
@@ -52,7 +92,7 @@
   "pk": 2,
   "fields": {
     "uid": "I002",
-    "name": "Prof. Johnson"
+    "name": "Prof. James Wilson"
   }
 },
 {
@@ -60,7 +100,7 @@
   "pk": 3,
   "fields": {
     "uid": "I003",
-    "name": "Dr. Williams"
+    "name": "Dr. Sarah Martinez"
   }
 },
 {
@@ -68,7 +108,7 @@
   "pk": 4,
   "fields": {
     "uid": "I004",
-    "name": "Prof. Brown"
+    "name": "Prof. Michael Thompson"
   }
 },
 {
@@ -76,7 +116,63 @@
   "pk": 5,
   "fields": {
     "uid": "I005",
-    "name": "Dr. Davis"
+    "name": "Dr. Robert Anderson"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 6,
+  "fields": {
+    "uid": "I006",
+    "name": "Prof. Lisa Patel"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 7,
+  "fields": {
+    "uid": "I007",
+    "name": "Dr. David Kim"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 8,
+  "fields": {
+    "uid": "I008",
+    "name": "Prof. Jennifer White"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 9,
+  "fields": {
+    "uid": "I009",
+    "name": "Dr. Christopher Lee"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 10,
+  "fields": {
+    "uid": "I010",
+    "name": "Prof. Amanda Garcia"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 11,
+  "fields": {
+    "uid": "I011",
+    "name": "Dr. William Taylor"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 12,
+  "fields": {
+    "uid": "I012",
+    "name": "Prof. Michelle Brown"
   }
 },
 {
@@ -284,11 +380,8 @@
   "pk": "CS101",
   "fields": {
     "course_name": "Introduction to Programming",
-    "max_numb_students": "30",
-    "instructors": [
-      1,
-      2
-    ]
+    "max_numb_students": "45",
+    "instructors": [1, 2]
   }
 },
 {
@@ -296,11 +389,8 @@
   "pk": "CS102",
   "fields": {
     "course_name": "Data Structures",
-    "max_numb_students": "25",
-    "instructors": [
-      1,
-      3
-    ]
+    "max_numb_students": "40",
+    "instructors": [1, 3]
   }
 },
 {
@@ -308,11 +398,8 @@
   "pk": "CS201",
   "fields": {
     "course_name": "Algorithms",
-    "max_numb_students": "30",
-    "instructors": [
-      2,
-      5
-    ]
+    "max_numb_students": "35",
+    "instructors": [2, 3]
   }
 },
 {
@@ -320,11 +407,8 @@
   "pk": "CS202",
   "fields": {
     "course_name": "Database Systems",
-    "max_numb_students": "35",
-    "instructors": [
-      3,
-      4
-    ]
+    "max_numb_students": "40",
+    "instructors": [3, 4]
   }
 },
 {
@@ -332,11 +416,26 @@
   "pk": "CS301",
   "fields": {
     "course_name": "Software Engineering",
+    "max_numb_students": "30",
+    "instructors": [4, 2]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "CS302",
+  "fields": {
+    "course_name": "Computer Networks",
+    "max_numb_students": "35",
+    "instructors": [1, 4]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "CS401",
+  "fields": {
+    "course_name": "Machine Learning",
     "max_numb_students": "25",
-    "instructors": [
-      4,
-      5
-    ]
+    "instructors": [3, 1]
   }
 },
 {
@@ -344,10 +443,8 @@
   "pk": "MA101",
   "fields": {
     "course_name": "Calculus I",
-    "max_numb_students": "40",
-    "instructors": [
-      2
-    ]
+    "max_numb_students": "80",
+    "instructors": [5, 6]
   }
 },
 {
@@ -355,10 +452,107 @@
   "pk": "MA102",
   "fields": {
     "course_name": "Linear Algebra",
+    "max_numb_students": "60",
+    "instructors": [5, 6]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "MA201",
+  "fields": {
+    "course_name": "Differential Equations",
+    "max_numb_students": "45",
+    "instructors": [6, 5]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "MA301",
+  "fields": {
+    "course_name": "Probability & Statistics",
+    "max_numb_students": "50",
+    "instructors": [5, 6]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "PH101",
+  "fields": {
+    "course_name": "Physics I: Mechanics",
+    "max_numb_students": "90",
+    "instructors": [7, 8]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "PH102",
+  "fields": {
+    "course_name": "Physics II: E&M",
+    "max_numb_students": "70",
+    "instructors": [8, 7]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "PH201",
+  "fields": {
+    "course_name": "Modern Physics",
     "max_numb_students": "35",
-    "instructors": [
-      5
-    ]
+    "instructors": [7, 8]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "EE101",
+  "fields": {
+    "course_name": "Circuit Analysis",
+    "max_numb_students": "50",
+    "instructors": [9, 10]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "EE201",
+  "fields": {
+    "course_name": "Electronics",
+    "max_numb_students": "40",
+    "instructors": [10, 9]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "EE301",
+  "fields": {
+    "course_name": "Digital Systems",
+    "max_numb_students": "35",
+    "instructors": [9, 10]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "BA101",
+  "fields": {
+    "course_name": "Principles of Management",
+    "max_numb_students": "80",
+    "instructors": [11, 12]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "BA201",
+  "fields": {
+    "course_name": "Marketing Fundamentals",
+    "max_numb_students": "60",
+    "instructors": [12, 11]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "BA301",
+  "fields": {
+    "course_name": "Business Analytics",
+    "max_numb_students": "40",
+    "instructors": [11, 12]
   }
 },
 {
@@ -366,13 +560,7 @@
   "pk": 1,
   "fields": {
     "dept_name": "Computer Science",
-    "courses": [
-      "CS101",
-      "CS102",
-      "CS201",
-      "CS202",
-      "CS301"
-    ]
+    "courses": ["CS101", "CS102", "CS201", "CS202", "CS301", "CS302", "CS401"]
   }
 },
 {
@@ -380,18 +568,39 @@
   "pk": 2,
   "fields": {
     "dept_name": "Mathematics",
-    "courses": [
-      "MA101",
-      "MA102"
-    ]
+    "courses": ["MA101", "MA102", "MA201", "MA301"]
+  }
+},
+{
+  "model": "SchedulerApp.department",
+  "pk": 3,
+  "fields": {
+    "dept_name": "Physics",
+    "courses": ["PH101", "PH102", "PH201"]
+  }
+},
+{
+  "model": "SchedulerApp.department",
+  "pk": 4,
+  "fields": {
+    "dept_name": "Electrical Engineering",
+    "courses": ["EE101", "EE201", "EE301"]
+  }
+},
+{
+  "model": "SchedulerApp.department",
+  "pk": 5,
+  "fields": {
+    "dept_name": "Business Administration",
+    "courses": ["BA101", "BA201", "BA301"]
   }
 },
 {
   "model": "SchedulerApp.section",
-  "pk": "CS-A",
+  "pk": "CS-1A",
   "fields": {
     "department": 1,
-    "num_class_in_week": 5,
+    "num_class_in_week": 7,
     "course": null,
     "meeting_time": null,
     "room": null,
@@ -400,10 +609,10 @@
 },
 {
   "model": "SchedulerApp.section",
-  "pk": "CS-B",
+  "pk": "CS-1B",
   "fields": {
     "department": 1,
-    "num_class_in_week": 5,
+    "num_class_in_week": 7,
     "course": null,
     "meeting_time": null,
     "room": null,
@@ -412,10 +621,94 @@
 },
 {
   "model": "SchedulerApp.section",
-  "pk": "MA-A",
+  "pk": "CS-2A",
+  "fields": {
+    "department": 1,
+    "num_class_in_week": 6,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "MA-1A",
   "fields": {
     "department": 2,
     "num_class_in_week": 4,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "MA-1B",
+  "fields": {
+    "department": 2,
+    "num_class_in_week": 4,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "PH-1A",
+  "fields": {
+    "department": 3,
+    "num_class_in_week": 3,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "EE-1A",
+  "fields": {
+    "department": 4,
+    "num_class_in_week": 3,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "EE-2A",
+  "fields": {
+    "department": 4,
+    "num_class_in_week": 3,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "BA-1A",
+  "fields": {
+    "department": 5,
+    "num_class_in_week": 3,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "BA-1B",
+  "fields": {
+    "department": 5,
+    "num_class_in_week": 3,
     "course": null,
     "meeting_time": null,
     "room": null,
