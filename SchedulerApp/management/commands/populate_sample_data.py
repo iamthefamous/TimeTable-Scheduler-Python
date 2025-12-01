@@ -2,6 +2,9 @@
 Django management command to populate sample data for timetable generation.
 This creates instructors, rooms, meeting times, courses, departments, and sections
 required to run the timetable scheduler.
+
+The data represents a realistic university scenario with multiple departments,
+specialized instructors, varied room types, and comprehensive course offerings.
 """
 from django.core.management.base import BaseCommand
 from SchedulerApp.models import Instructor, Room, MeetingTime, Course, Department, Section
@@ -13,13 +16,25 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.stdout.write('Populating sample data...')
 
-        # Create Instructors
+        # Create Instructors - Diverse faculty with different specializations
         instructors_data = [
-            ('I001', 'Dr. Smith'),
-            ('I002', 'Prof. Johnson'),
-            ('I003', 'Dr. Williams'),
-            ('I004', 'Prof. Brown'),
-            ('I005', 'Dr. Davis'),
+            # Computer Science Faculty
+            ('I001', 'Dr. Emily Chen'),
+            ('I002', 'Prof. James Wilson'),
+            ('I003', 'Dr. Sarah Martinez'),
+            ('I004', 'Prof. Michael Thompson'),
+            # Mathematics Faculty
+            ('I005', 'Dr. Robert Anderson'),
+            ('I006', 'Prof. Lisa Patel'),
+            # Physics Faculty
+            ('I007', 'Dr. David Kim'),
+            ('I008', 'Prof. Jennifer White'),
+            # Electrical Engineering Faculty
+            ('I009', 'Dr. Christopher Lee'),
+            ('I010', 'Prof. Amanda Garcia'),
+            # Business Faculty
+            ('I011', 'Dr. William Taylor'),
+            ('I012', 'Prof. Michelle Brown'),
         ]
 
         instructors = {}
@@ -32,13 +47,23 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write(f'  Created instructor: {name}')
 
-        # Create Rooms
+        # Create Rooms - Varied room types with different capacities
         rooms_data = [
-            ('R101', 40),
-            ('R102', 35),
-            ('R103', 50),
-            ('R104', 30),
-            ('R105', 45),
+            # Large Lecture Halls
+            ('LH101', 120),
+            ('LH102', 100),
+            # Medium Classrooms
+            ('CR201', 50),
+            ('CR202', 45),
+            ('CR203', 40),
+            # Small Seminar Rooms
+            ('SR301', 25),
+            ('SR302', 25),
+            # Computer Labs
+            ('LAB01', 35),
+            ('LAB02', 30),
+            # Physics/Engineering Labs
+            ('LAB03', 25),
         ]
 
         for r_number, capacity in rooms_data:
@@ -49,7 +74,7 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write(f'  Created room: {r_number} (capacity: {capacity})')
 
-        # Create Meeting Times
+        # Create Meeting Times - Standard academic time slots
         time_slots = [
             ('8:45 - 9:45', 'Monday'),
             ('10:00 - 11:00', 'Monday'),
@@ -89,15 +114,33 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write(f'  Created meeting time: {pid} - {day} {time}')
 
-        # Create Courses
+        # Create Courses - Comprehensive curriculum across departments
         courses_data = [
-            ('CS101', 'Introduction to Programming', '30', ['I001', 'I002']),
-            ('CS102', 'Data Structures', '25', ['I001', 'I003']),
-            ('CS201', 'Algorithms', '30', ['I002', 'I005']),
-            ('CS202', 'Database Systems', '35', ['I003', 'I004']),
-            ('CS301', 'Software Engineering', '25', ['I004', 'I005']),
-            ('MA101', 'Calculus I', '40', ['I002']),
-            ('MA102', 'Linear Algebra', '35', ['I005']),
+            # Computer Science Courses
+            ('CS101', 'Introduction to Programming', '45', ['I001', 'I002']),
+            ('CS102', 'Data Structures', '40', ['I001', 'I003']),
+            ('CS201', 'Algorithms', '35', ['I002', 'I003']),
+            ('CS202', 'Database Systems', '40', ['I003', 'I004']),
+            ('CS301', 'Software Engineering', '30', ['I004', 'I002']),
+            ('CS302', 'Computer Networks', '35', ['I001', 'I004']),
+            ('CS401', 'Machine Learning', '25', ['I003', 'I001']),
+            # Mathematics Courses
+            ('MA101', 'Calculus I', '80', ['I005', 'I006']),
+            ('MA102', 'Linear Algebra', '60', ['I005', 'I006']),
+            ('MA201', 'Differential Equations', '45', ['I006', 'I005']),
+            ('MA301', 'Probability & Statistics', '50', ['I005', 'I006']),
+            # Physics Courses
+            ('PH101', 'Physics I: Mechanics', '90', ['I007', 'I008']),
+            ('PH102', 'Physics II: E&M', '70', ['I008', 'I007']),
+            ('PH201', 'Modern Physics', '35', ['I007', 'I008']),
+            # Electrical Engineering Courses
+            ('EE101', 'Circuit Analysis', '50', ['I009', 'I010']),
+            ('EE201', 'Electronics', '40', ['I010', 'I009']),
+            ('EE301', 'Digital Systems', '35', ['I009', 'I010']),
+            # Business Courses
+            ('BA101', 'Principles of Management', '80', ['I011', 'I012']),
+            ('BA201', 'Marketing Fundamentals', '60', ['I012', 'I011']),
+            ('BA301', 'Business Analytics', '40', ['I011', 'I012']),
         ]
 
         courses = {}
@@ -116,10 +159,13 @@ class Command(BaseCommand):
                 self.stdout.write(f'  Updated course instructors: {course_name}')
             courses[course_number] = course
 
-        # Create Departments
+        # Create Departments - Realistic university structure
         departments_data = [
-            ('Computer Science', ['CS101', 'CS102', 'CS201', 'CS202', 'CS301']),
-            ('Mathematics', ['MA101', 'MA102']),
+            ('Computer Science', ['CS101', 'CS102', 'CS201', 'CS202', 'CS301', 'CS302', 'CS401']),
+            ('Mathematics', ['MA101', 'MA102', 'MA201', 'MA301']),
+            ('Physics', ['PH101', 'PH102', 'PH201']),
+            ('Electrical Engineering', ['EE101', 'EE201', 'EE301']),
+            ('Business Administration', ['BA101', 'BA201', 'BA301']),
         ]
 
         departments = {}
@@ -137,11 +183,23 @@ class Command(BaseCommand):
                 self.stdout.write(f'  Updated department courses: {dept_name}')
             departments[dept_name] = dept
 
-        # Create Sections
+        # Create Sections - Multiple sections per department with varied class loads
         sections_data = [
-            ('CS-A', 'Computer Science', 5),
-            ('CS-B', 'Computer Science', 5),
-            ('MA-A', 'Mathematics', 4),
+            # Computer Science Sections
+            ('CS-1A', 'Computer Science', 7),
+            ('CS-1B', 'Computer Science', 7),
+            ('CS-2A', 'Computer Science', 6),
+            # Mathematics Sections
+            ('MA-1A', 'Mathematics', 4),
+            ('MA-1B', 'Mathematics', 4),
+            # Physics Sections
+            ('PH-1A', 'Physics', 3),
+            # Electrical Engineering Sections
+            ('EE-1A', 'Electrical Engineering', 3),
+            ('EE-2A', 'Electrical Engineering', 3),
+            # Business Sections
+            ('BA-1A', 'Business Administration', 3),
+            ('BA-1B', 'Business Administration', 3),
         ]
 
         for section_id, dept_name, num_classes in sections_data:
