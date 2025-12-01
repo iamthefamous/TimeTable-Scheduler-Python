@@ -196,16 +196,34 @@ This ensures:
    python manage.py createsuperuser
    ```
 
-6. **Start the development server**
+6. **Load sample data** (optional - for quick start)
+   ```bash
+   python manage.py populate_sample_data
+   ```
+   This will populate the database with sample instructors, rooms, meeting times, courses, departments, and sections.
+
+   Alternatively, load from fixture:
+   ```bash
+   python manage.py loaddata sample_data
+   ```
+
+7. **Start the development server**
    ```bash
    python manage.py runserver
    ```
 
-7. **Access the application**
+8. **Access the application**
    - Open your browser and navigate to `http://127.0.0.1:8000/`
    - Login with your superuser credentials
 
 ## 📖 Usage
+
+### Quick Start with Sample Data
+
+If you loaded sample data in step 6, you can immediately generate a timetable:
+1. Log in to the application
+2. Click on "Generate Timetable"
+3. The genetic algorithm will run and display an optimized schedule
 
 ### Setting Up Data
 
