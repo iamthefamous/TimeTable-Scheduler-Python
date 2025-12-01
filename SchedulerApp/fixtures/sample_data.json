@@ -1,0 +1,425 @@
+[
+{
+  "model": "SchedulerApp.room",
+  "pk": 1,
+  "fields": {
+    "r_number": "R101",
+    "seating_capacity": 40
+  }
+},
+{
+  "model": "SchedulerApp.room",
+  "pk": 2,
+  "fields": {
+    "r_number": "R102",
+    "seating_capacity": 35
+  }
+},
+{
+  "model": "SchedulerApp.room",
+  "pk": 3,
+  "fields": {
+    "r_number": "R103",
+    "seating_capacity": 50
+  }
+},
+{
+  "model": "SchedulerApp.room",
+  "pk": 4,
+  "fields": {
+    "r_number": "R104",
+    "seating_capacity": 30
+  }
+},
+{
+  "model": "SchedulerApp.room",
+  "pk": 5,
+  "fields": {
+    "r_number": "R105",
+    "seating_capacity": 45
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 1,
+  "fields": {
+    "uid": "I001",
+    "name": "Dr. Smith"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 2,
+  "fields": {
+    "uid": "I002",
+    "name": "Prof. Johnson"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 3,
+  "fields": {
+    "uid": "I003",
+    "name": "Dr. Williams"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 4,
+  "fields": {
+    "uid": "I004",
+    "name": "Prof. Brown"
+  }
+},
+{
+  "model": "SchedulerApp.instructor",
+  "pk": 5,
+  "fields": {
+    "uid": "I005",
+    "name": "Dr. Davis"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT01",
+  "fields": {
+    "time": "8:45 - 9:45",
+    "day": "Monday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT02",
+  "fields": {
+    "time": "10:00 - 11:00",
+    "day": "Monday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT03",
+  "fields": {
+    "time": "11:00 - 12:00",
+    "day": "Monday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT04",
+  "fields": {
+    "time": "1:00 - 2:00",
+    "day": "Monday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT05",
+  "fields": {
+    "time": "2:15 - 3:15",
+    "day": "Monday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT06",
+  "fields": {
+    "time": "8:45 - 9:45",
+    "day": "Tuesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT07",
+  "fields": {
+    "time": "10:00 - 11:00",
+    "day": "Tuesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT08",
+  "fields": {
+    "time": "11:00 - 12:00",
+    "day": "Tuesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT09",
+  "fields": {
+    "time": "1:00 - 2:00",
+    "day": "Tuesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT10",
+  "fields": {
+    "time": "2:15 - 3:15",
+    "day": "Tuesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT11",
+  "fields": {
+    "time": "8:45 - 9:45",
+    "day": "Wednesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT12",
+  "fields": {
+    "time": "10:00 - 11:00",
+    "day": "Wednesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT13",
+  "fields": {
+    "time": "11:00 - 12:00",
+    "day": "Wednesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT14",
+  "fields": {
+    "time": "1:00 - 2:00",
+    "day": "Wednesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT15",
+  "fields": {
+    "time": "2:15 - 3:15",
+    "day": "Wednesday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT16",
+  "fields": {
+    "time": "8:45 - 9:45",
+    "day": "Thursday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT17",
+  "fields": {
+    "time": "10:00 - 11:00",
+    "day": "Thursday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT18",
+  "fields": {
+    "time": "11:00 - 12:00",
+    "day": "Thursday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT19",
+  "fields": {
+    "time": "1:00 - 2:00",
+    "day": "Thursday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT20",
+  "fields": {
+    "time": "2:15 - 3:15",
+    "day": "Thursday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT21",
+  "fields": {
+    "time": "8:45 - 9:45",
+    "day": "Friday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT22",
+  "fields": {
+    "time": "10:00 - 11:00",
+    "day": "Friday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT23",
+  "fields": {
+    "time": "11:00 - 12:00",
+    "day": "Friday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT24",
+  "fields": {
+    "time": "1:00 - 2:00",
+    "day": "Friday"
+  }
+},
+{
+  "model": "SchedulerApp.meetingtime",
+  "pk": "MT25",
+  "fields": {
+    "time": "2:15 - 3:15",
+    "day": "Friday"
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "CS101",
+  "fields": {
+    "course_name": "Introduction to Programming",
+    "max_numb_students": "30",
+    "instructors": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "CS102",
+  "fields": {
+    "course_name": "Data Structures",
+    "max_numb_students": "25",
+    "instructors": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "CS201",
+  "fields": {
+    "course_name": "Algorithms",
+    "max_numb_students": "30",
+    "instructors": [
+      2,
+      5
+    ]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "CS202",
+  "fields": {
+    "course_name": "Database Systems",
+    "max_numb_students": "35",
+    "instructors": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "CS301",
+  "fields": {
+    "course_name": "Software Engineering",
+    "max_numb_students": "25",
+    "instructors": [
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "MA101",
+  "fields": {
+    "course_name": "Calculus I",
+    "max_numb_students": "40",
+    "instructors": [
+      2
+    ]
+  }
+},
+{
+  "model": "SchedulerApp.course",
+  "pk": "MA102",
+  "fields": {
+    "course_name": "Linear Algebra",
+    "max_numb_students": "35",
+    "instructors": [
+      5
+    ]
+  }
+},
+{
+  "model": "SchedulerApp.department",
+  "pk": 1,
+  "fields": {
+    "dept_name": "Computer Science",
+    "courses": [
+      "CS101",
+      "CS102",
+      "CS201",
+      "CS202",
+      "CS301"
+    ]
+  }
+},
+{
+  "model": "SchedulerApp.department",
+  "pk": 2,
+  "fields": {
+    "dept_name": "Mathematics",
+    "courses": [
+      "MA101",
+      "MA102"
+    ]
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "CS-A",
+  "fields": {
+    "department": 1,
+    "num_class_in_week": 5,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "CS-B",
+  "fields": {
+    "department": 1,
+    "num_class_in_week": 5,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+},
+{
+  "model": "SchedulerApp.section",
+  "pk": "MA-A",
+  "fields": {
+    "department": 2,
+    "num_class_in_week": 4,
+    "course": null,
+    "meeting_time": null,
+    "room": null,
+    "instructor": null
+  }
+}
+]
