@@ -34,13 +34,13 @@ html, body {
 }
 
 body {
-  background:url('../img/loginbg.jpg') center center / auto 100% no-repeat;
+  background: url('../img/loginbg.jpg') center center / cover no-repeat fixed;
   font-size: 14px;
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.1;
   color: #333;
-  background-color: #fff;
+  min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto
 }
