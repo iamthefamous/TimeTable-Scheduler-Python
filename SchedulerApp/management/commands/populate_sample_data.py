@@ -106,10 +106,14 @@ class Command(BaseCommand):
                 course_number=course_number,
                 defaults={'course_name': course_name, 'max_numb_students': max_students}
             )
-            if created or not course.instructors.exists():
+            if created:
                 for uid in instructor_uids:
                     course.instructors.add(instructors[uid])
                 self.stdout.write(f'  Created course: {course_name}')
+            elif not course.instructors.exists():
+                for uid in instructor_uids:
+                    course.instructors.add(instructors[uid])
+                self.stdout.write(f'  Updated course instructors: {course_name}')
             courses[course_number] = course
 
         # Create Departments
@@ -123,10 +127,14 @@ class Command(BaseCommand):
             dept, created = Department.objects.get_or_create(
                 dept_name=dept_name
             )
-            if created or not dept.courses.exists():
+            if created:
                 for course_num in course_numbers:
                     dept.courses.add(courses[course_num])
                 self.stdout.write(f'  Created department: {dept_name}')
+            elif not dept.courses.exists():
+                for course_num in course_numbers:
+                    dept.courses.add(courses[course_num])
+                self.stdout.write(f'  Updated department courses: {dept_name}')
             departments[dept_name] = dept
 
         # Create Sections
