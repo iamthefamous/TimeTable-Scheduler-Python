@@ -16,10 +16,10 @@ VARS = {'generationNum': 0,
 
 
 class Population:
-    def __init__(self, size):
+    def __init__(self, size, data=None):
         self._size = size
-        self._data = data
-        self._schedules = [Schedule().initialize() for i in range(size)]
+        self._data = data if data is not None else Data()
+        self._schedules = [Schedule(self._data).initialize() for i in range(size)]
 
     def getSchedules(self):
         return self._schedules
@@ -91,8 +91,8 @@ class Class:
 
 
 class Schedule:
-    def __init__(self):
-        self._data = data
+    def __init__(self, data=None):
+        self._data = data if data is not None else Data()
         self._classes = []
         self._numberOfConflicts = 0
         self._fitness = -1
@@ -132,16 +132,16 @@ class Schedule:
             dept = section.department
             n = section.num_class_in_week
 
-            if n > len(data.get_meetingTimes()):
-                n = len(data.get_meetingTimes())
+            if n > len(self._data.get_meetingTimes()):
+                n = len(self._data.get_meetingTimes())
 
             courses = dept.courses.all()
             for course in courses:
                 for i in range(n // len(courses)):
-                    self.addCourse(data, course, courses, dept, section)
+                    self.addCourse(self._data, course, courses, dept, section)
 
             for course in courses.order_by('?')[:(n % len(courses))]:
-                self.addCourse(data, course, courses, dept, section)
+                self.addCourse(self._data, course, courses, dept, section)
 
         return self
 
@@ -177,11 +177,14 @@ class Schedule:
 
 
 class GeneticAlgorithm:
+    def __init__(self, data=None):
+        self._data = data if data is not None else Data()
+
     def evolve(self, population):
         return self._mutatePopulation(self._crossoverPopulation(population))
 
     def _crossoverPopulation(self, popula):
-        crossoverPopula = Population(0)
+        crossoverPopula = Population(0, self._data)
         for i in range(NUMB_OF_ELITE_SCHEDULES):
             crossoverPopula.getSchedules().append(popula.getSchedules()[i])
 
@@ -200,7 +203,7 @@ class GeneticAlgorithm:
         return population
 
     def _crossoverSchedule(self, scheduleX, scheduleY):
-        crossoverSchedule = Schedule().initialize()
+        crossoverSchedule = Schedule(self._data).initialize()
         for i in range(0, len(crossoverSchedule.getClasses())):
             if random.random() > 0.5:
                 crossoverSchedule.getClasses()[i] = scheduleX.getClasses()[i]
@@ -209,14 +212,14 @@ class GeneticAlgorithm:
         return crossoverSchedule
 
     def _mutateSchedule(self, mutateSchedule):
-        schedule = Schedule().initialize()
+        schedule = Schedule(self._data).initialize()
         for i in range(len(mutateSchedule.getClasses())):
             if MUTATION_RATE > random.random():
                 mutateSchedule.getClasses()[i] = schedule.getClasses()[i]
         return mutateSchedule
 
     def _tournamentPopulation(self, popula):
-        tournamentPopula = Population(0)
+        tournamentPopula = Population(0, self._data)
 
         for i in range(0, TOURNAMENT_SELECTION_SIZE):
             tournamentPopula.getSchedules().append(
@@ -258,13 +261,12 @@ def apiterminateGens(request):
 
 @login_required
 def timetable(request):
-    global data
     data = Data()
-    population = Population(POPULATION_SIZE)
+    population = Population(POPULATION_SIZE, data)
     VARS['generationNum'] = 0
     VARS['terminateGens'] = False
     population.getSchedules().sort(key=lambda x: x.getFitness(), reverse=True)
-    geneticAlgorithm = GeneticAlgorithm()
+    geneticAlgorithm = GeneticAlgorithm(data)
     schedule = population.getSchedules()[0]
 
     while (schedule.getFitness() != 1.0) and (VARS['generationNum'] < 100):
